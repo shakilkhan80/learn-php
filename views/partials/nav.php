@@ -15,6 +15,9 @@
                         <a href="/about"
                             class="<?= url("/about") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">About</a>
+                        <a href="/notes"
+                            class="<?= url("/notes") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
+                            aria-current="page">Notes</a>
                         <a href="/contact"
                             class="<?= url("/contact") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">Contact</a>
