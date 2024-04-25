@@ -1,6 +1,6 @@
-<?php require 'partials/head.php' ?>
-<?php require 'partials/nav.php' ?>
-<?php require 'partials/banner.php' ?>
+<?php require base_path('views/partials/head.php') ?>
+<?php require base_path('views/partials/nav.php') ?>
+<?php require base_path('views/partials/banner.php') ?>
 
 
 <main>
@@ -10,7 +10,7 @@
 
                 <li>
                     <a href="/note?id=<?php echo $note['id'] ?>" class="text-blue-500 hover:underline">
-                        <?= $note['body'] ?>
+                        <?= htmlspecialchars($note['body']) ?>
                     </a>
                 </li>
 
@@ -21,4 +21,4 @@
         </p>
     </div>
 </main>
-<?php require 'partials/footer.php' ?>
+<?php require base_path('views/partials/footer.php') ?>
