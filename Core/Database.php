@@ -1,4 +1,9 @@
 <?php
+
+namespace Core;
+
+use PDO;
+
 class DataBase
 {
 
