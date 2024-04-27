@@ -5,7 +5,7 @@
 
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form action="/notes/create" method="POST">
+        <form action="/notes" method="POST">
             <div class="col-span-full">
                 <label for="body" class="block text-sm font-medium leading-6 text-gray-900">Body</label>
                 <div class="mt-2">
