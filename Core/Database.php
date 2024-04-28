@@ -4,7 +4,7 @@ namespace Core;
 
 use PDO;
 
-class DataBase
+class Database
 {
 
     public $connection;

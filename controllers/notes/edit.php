@@ -1,5 +1,10 @@
 <?php
 
+//email validate check
+// if (!Validator::email("a@a.com")) {
+//     dd("Email is not valid");
+// }
+
 use Core\Database;
 use Core\App;
 
@@ -13,9 +18,8 @@ $note = $db->query('SELECT * FROM notes WHERE id = :id', [':id' => $_GET['id']])
 
 authorize($note['user_id'] === $currentUserId);
 
-
-view('notes/show.view.php', [
-    'headings' => 'Note',
+view('notes/edit.view.php', [
+    'headings' => 'Edit Notes',
+    'errors'   => [],
     'note'     => $note
 ]);
-
