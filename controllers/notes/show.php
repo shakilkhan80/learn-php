@@ -9,7 +9,7 @@ $db = App::resolve(Database::class);
 $currentUserId = 5;
 
 
-$note = $db->query('SELECT * FROM notes WHERE id = :id', [':id' => $_GET['id']])->find();
+$note = $db->query('SELECT * FROM notes WHERE id = :id', [':id' => $_GET['id']])->findOrFail();
 
 authorize($note['user_id'] === $currentUserId);
 
