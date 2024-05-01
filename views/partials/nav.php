@@ -6,18 +6,20 @@
                     <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                         alt="Your Company">
                 </div>
+
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-
                         <a href="/"
                             class="<?= url("/") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">Home</a>
                         <a href="/about"
                             class="<?= url("/about") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">About</a>
-                        <a href="/notes"
-                            class="<?= url("/notes") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
-                            aria-current="page">Notes</a>
+                        <?php if ($_SESSION['user'] ?? false): ?>
+                            <a href="/notes"
+                                class="<?= url("/notes") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
+                                aria-current="page">Notes</a>
+                        <?php endif; ?>
                         <a href="/contact"
                             class="<?= url("/contact") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
                             aria-current="page">Contact</a>
@@ -51,11 +53,24 @@
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         alt="">
                                 <?php else: ?>
-                                    <a href="/register" class="text-white"><button>Register</button></a>
+                                    <a href="/register"
+                                        class="<?= url("/register") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
+                                        aria-current="page"><button>Register</button></a>
+                                    <a href="/login"
+                                        class="<?= url("/login") ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium"
+                                        aria-current="page"><button>Login</button></a>
                                 <?php endif ?>
                             </button>
                         </div>
                     </div>
+                    <?php if ($_SESSION['user'] ?? false): ?>
+                        <div>
+                            <form action="/session" method="POST">
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button class="text-white px-4" type="submit">Logout</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="-mr-2 flex md:hidden">
