@@ -1,0 +1,16 @@
+{
+  "name": "shaki/demo",
+  "authors": [
+    {
+      "name": "shakilkhan80",
+      "email": "shakilkhan81198@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}
