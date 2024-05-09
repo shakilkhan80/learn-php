@@ -6,11 +6,16 @@
       "email": "shakilkhan81198@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "illuminate/collections": "^11.7"
+  },
   "autoload": {
     "psr-4": {
       "Core\\": "Core/",
       "Http\\": "Http/"
     }
+  },
+  "require-dev": {
+    "pestphp/pest": "*"
   }
 }
